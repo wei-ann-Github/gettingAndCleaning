@@ -75,7 +75,6 @@ mean_and_sd <- data.frame(mean_and_sd)
 mean_and_sd$Subject <- as.factor(mean_and_sd$Subject)
 tidy_set <- mean_and_sd %>% group_by(Activity, Subject) %>% 
   summarise_each(funs(mean)) 
-tidy_set <- summarise_each(tidy_set, funs(mean))
 
 # write tidy_set into file
 write.table(tidy_set, "tidy_set.txt", row.name=FALSE)

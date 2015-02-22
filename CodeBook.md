@@ -14,5 +14,12 @@
 1. Activity index is replace by the respective activity names from 'activity_labels.txt"
 
 ### Step 4:
-1. the 'mean_sd_ind' is used to extract activity labels from 'features'
+1. the 'mean_sd_ind' is used to extract mean and std feature labels from 'features'
+2. The extracted feature labels, are used to rename the column headers of 'mean_and_sd' (it is the extracted dataset from the merged data in step 1).
+
+### Step 5:
+1. 'mean_and_sd' is converted to data.frame for easier data manuipulation.
+2. The "subject column is transformed to a factor.
+3. A chain operation is performed on 'mean_and_sd' to group the data by Subject and Activity and summarise each column by mean() and store the result in tidy_set data.frame.
+4. Final 'tidy_set' is saved in a text file in the working directory via write.table()
 
